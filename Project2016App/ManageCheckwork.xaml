@@ -1,0 +1,41 @@
+﻿<Window x:Class="Project2016App.ManageCheckwork"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project2016App"
+        mc:Ignorable="d"
+        Title="ตรวจสอบการบันทึกทำงาน" ResizeMode="NoResize" Icon="iconapp.ico" WindowStartupLocation="CenterScreen" d:DesignWidth="794" Height="500" Width="850">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="image/bgemployee.jpg" Opacity="0.2"/>
+        </Grid.Background>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="327,22,0,0" TextWrapping="Wrap" Text="ตารางตรวจสอบการบันทึกเข้าทำงาน" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" VirtualizingStackPanel.IsVirtualizing="False" Margin="153,125,0,0" VerticalAlignment="Top" Height="272" Width="568" CanUserResizeColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn x:Name="ckbColumn"  ClipboardContentBinding="{x:Null}" Width="50" Header="ลบข้อมูล"/>
+                <DataGridTextColumn Binding="{Binding checkDate,StringFormat=\{0:dd/MM/yyyy\}}" ClipboardContentBinding="{x:Null}" Header="วันที่" Width="100" CanUserSort="False" CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding checkID}" ClipboardContentBinding="{x:Null}" Header="รหัส" Width="100" CanUserSort="False" CanUserResize="False" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding checkName}" ClipboardContentBinding="{x:Null}" Header="ชื่อ" Width="100" CanUserSort="False" CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding checkLastname}" ClipboardContentBinding="{x:Null}" Header="นามสกุล" Width="100" CanUserSort="False" CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding checkStatus}" ClipboardContentBinding="{x:Null}" Header="สถานะ"  Width="100" CanUserSort="False" CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding checkPay}" ClipboardContentBinding="{x:Null}" Header="รายได้ประจำวัน" Width="100" CanUserSort="False" CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding checkInfo}" ClipboardContentBinding="{x:Null}" Header="หมายเหตุ" Width="100" CanUserSort="False" CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding saveInfo}" ClipboardContentBinding="{x:Null}" Header="วันที่บันทึก" Width="200" CanUserSort="False"/>
+                <DataGridTextColumn Binding="{Binding checkworkID}" ClipboardContentBinding="{x:Null}" Header="วันที่บันทึก" Width="0" CanUserSort="False" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="54" Margin="153,64,0,0" VerticalAlignment="Top" Width="448"/>
+        <Label x:Name="label" Content="ค้นหาวันที่" HorizontalAlignment="Left" Margin="159,43,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="datePick1" HorizontalAlignment="Left" Margin="200,84,0,0" VerticalAlignment="Top" Width="140"/>
+        <DatePicker x:Name="datePick2" HorizontalAlignment="Left" Margin="382,84,0,0" VerticalAlignment="Top" Width="138"/>
+        <Label x:Name="label1" Content="จาก" HorizontalAlignment="Left" Margin="170,82,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="ถึง" HorizontalAlignment="Left" Margin="353,82,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Search" Content="ค้นหา" HorizontalAlignment="Left" Margin="536,87,0,0" VerticalAlignment="Top" Width="58" Click="Search_Click"/>
+        <Button x:Name="bt_Delete" Content="ลบ" HorizontalAlignment="Left" Margin="643,414,0,0" VerticalAlignment="Top" Width="78" Click="bt_Delete_Click" Height="30"/>
+        <Button x:Name="EditClick" Content="ไปยังหน้าแก้ไข" HorizontalAlignment="Left" Margin="152,415,0,0" VerticalAlignment="Top" Width="75" Height="31" Click="EditClick_Click"/>
+        <TextBox x:Name="Searchname" HorizontalAlignment="Left" Height="24" Margin="627,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" TextChanged="AfterTextChange"/>
+        <Label x:Name="label3" Content="ค้นหาพนักงาน" HorizontalAlignment="Left" Margin="621,59,0,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+</Window>

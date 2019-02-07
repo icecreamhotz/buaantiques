@@ -1,0 +1,44 @@
+﻿<Window x:Class="Project2016App.ReportDecided"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Project2016App"
+        mc:Ignorable="d"
+        Title="รายงานการส่งสินค้า" ResizeMode="NoResize" Icon="iconapp.ico"  WindowStartupLocation="CenterScreen" Height="700" Width="978" Loaded="Form_Load">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="image/report-bg.png" Opacity="0.2"/>
+        </Grid.Background>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="60" Margin="54,59,0,0" VerticalAlignment="Top" Width="505"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="104" Margin="37,21,0,0" VerticalAlignment="Top" Width="896"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="479,24,0,0" TextWrapping="Wrap" Text="รายงานการส่งสินค้า" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="ค้นหาวันที่" HorizontalAlignment="Left" Margin="54,36,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="datePick1" HorizontalAlignment="Left" Margin="111,82,0,0" VerticalAlignment="Top" Width="146"/>
+        <Label x:Name="label1" Content="วันที่" HorizontalAlignment="Left" Margin="66,81,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Search" Content="ค้นหา" HorizontalAlignment="Left" Margin="480,84,0,0" VerticalAlignment="Top" Width="58" Click="Search_Click" />
+        <Button x:Name="bt_Edit" Content="ปิดหน้าต่าง" HorizontalAlignment="Left" Margin="843,616,0,0" VerticalAlignment="Top" Width="92"  Height="42" Background="Red" Click="bt_Edit_Click"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="38,132,0,0" VerticalAlignment="Top" Height="468" Width="896" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding stockhisDate,StringFormat=\{0:dd/MM/yyyy\}}" ClipboardContentBinding="{x:Null}" Header="วันที่ส่ง" Width="100" CanUserResize="False"  IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding proCode}" ClipboardContentBinding="{x:Null}" Header="รหัสสินค้า" Width="100" CanUserResize="False"  IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding proName}" ClipboardContentBinding="{x:Null}" Header="ชื่อสินค้า" Width="100" CanUserResize="False"  IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding stockTotalold}" ClipboardContentBinding="{x:Null}" Header="จำนวนสินค้าก่อนส่ง" Width="100" CanUserResize="False"  IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding stockTotalnew}" ClipboardContentBinding="{x:Null}" Header="ตำนวนสินค้าที่ส่ง" Width="100" CanUserResize="False"  IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding stockTotallast}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="คงเหลือ" Width="100"  IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding stocksellPrice}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="ราคาขาย" Width="100"  IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding stockTotalprice}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="จำนวนเงินที่ได้" Width="100"  IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding typenameUnit}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="ประเภทสินค้า" Width="100"  IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding typepName}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="หน่วยนับสินค้า" Width="100"  IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding stockhisInfo}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="หมายเหตุ" Width="100"  IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding stockhisMoney}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="จำนวนเงินที่ได้รับ" Width="100"  IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DatePicker x:Name="datePick2" HorizontalAlignment="Left" Margin="314,82,0,0" VerticalAlignment="Top" Width="146"/>
+        <Label x:Name="label1_Copy" Content="ถึงวันที่" HorizontalAlignment="Left" Margin="266,81,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="bt_Print" Content="พิมพ์" HorizontalAlignment="Left" Margin="38,616,0,0" VerticalAlignment="Top" Width="92"  Height="42" Background="#FF51FF00" Click="bt_Print_Click" />
+
+
+    </Grid>
+</Window>

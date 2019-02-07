@@ -1,0 +1,55 @@
+﻿<Window x:Class="Project2016App.Product"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Project2016App"
+        mc:Ignorable="d"
+        Title="จัดการข้อมูลหน่วยนับสินค้า" Height="759" Width="1378"  Icon="iconapp.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" xml:lang="th-TH" Loaded="Form_Load">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="image/bg-editproduct.png" Opacity="0.2"/>
+        </Grid.Background>
+        <Label x:Name="label2" Content="_________________________________________" HorizontalAlignment="Left" Margin="227,72,0,0" VerticalAlignment="Top" Width="1016" FontSize="120" Height="268"/>
+        <TextBox x:Name="txtTypeproduct" HorizontalAlignment="Left" Height="35" Margin="546,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" FontSize="15"/>
+        <Label x:Name="label" Content="ชื่อหน่วยนับสินค้า :" HorizontalAlignment="Left" Margin="402,290,0,0" VerticalAlignment="Top" Height="35" Width="147" FontSize="18"/>
+        <Label x:Name="label_Copy" Content="หน่วยนับที่ :" HorizontalAlignment="Left" Margin="451,243,0,0" VerticalAlignment="Top" Height="35" Width="95" FontSize="18"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="309,352,0,0" VerticalAlignment="Top" Height="300" Width="700" SelectionChanged="DataGridCellClick" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding typepID}" ClipboardContentBinding="{x:Null}" FontSize="15" Header="ลำดับที่" SortMemberPath="typepID" Width="350" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding typepName}" ClipboardContentBinding="{x:Null}" FontSize="15" Header="ชื่อหน่วยนับ" SortMemberPath="typepName" Width="350" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="314,59,0,0" Stroke="White" VerticalAlignment="Top" Width="100">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/save.ico"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="SavetoDB" Content="Button" HorizontalAlignment="Left" Margin="313,54,0,0" VerticalAlignment="Top" Width="105" Height="107" Background="White" BorderBrush="White" Foreground="White" Opacity="0" Click="SavetoDB_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="577,59,0,0" Stroke="White" VerticalAlignment="Top" Width="100">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/edit.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="EdittoDB" Content="Button" HorizontalAlignment="Left" Margin="576,54,0,0" VerticalAlignment="Top" Width="105" Height="107" Background="White" BorderBrush="White" Foreground="White" Opacity="0" Click="EdittoDB_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="816,59,0,0" Stroke="White" VerticalAlignment="Top" Width="100">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/delete.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="DeleteFromDB" Content="Button" HorizontalAlignment="Left" Margin="816,54,0,0" VerticalAlignment="Top" Width="104" Height="107" Background="White" BorderBrush="White" Foreground="White" Opacity="0" Click="DeleteFromDB_Click"/>
+        <Label x:Name="label1" Content="บันทึก" HorizontalAlignment="Left" Margin="336,161,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="label1_Copy" Content="แก้ไข" HorizontalAlignment="Left" Margin="584,161,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="label1_Copy1" Content="ลบ" HorizontalAlignment="Left" Margin="855,162,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <TextBlock x:Name="showID" HorizontalAlignment="Left" Margin="547,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227" Height="28" FontSize="15"/>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="1057,64,0,0" Stroke="White" VerticalAlignment="Top" Width="100">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/cleardata.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="ClearData" Content="Button" HorizontalAlignment="Left" Margin="1056,62,0,0" VerticalAlignment="Top" Width="104" Height="106" Background="White" BorderBrush="White" Foreground="White" Opacity="0" Click="ClearData_Click" />
+        <Label x:Name="label1_Copy2" Content="ล้างข้อมูล" HorizontalAlignment="Left" Margin="1066,160,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+
+    </Grid>
+</Window>

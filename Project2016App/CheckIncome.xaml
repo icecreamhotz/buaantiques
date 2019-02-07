@@ -1,0 +1,60 @@
+﻿<Window x:Class="Project2016App.CheckIncome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project2016App"
+        mc:Ignorable="d"
+        Title="ดูประวัติการบันทึก รายรับ-รายจ่าย" Height="759" Width="1378" ResizeMode="NoResize" Icon="iconapp.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized"  Loaded="Form_Load">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="image/bg-account.jpg" Opacity="0.1"/>
+        </Grid.Background>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="84,126,0,0" VerticalAlignment="Top" Height="455" Width="1200" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding incomeDate,StringFormat=\{0:dd/MM/yyyy\}}" CanUserResize="False" ClipboardContentBinding="{x:Null}" IsReadOnly="True" Width="200" Header="วันที่"/>
+                <DataGridTextColumn Binding="{Binding typeledgerName}" CanUserResize="False" ClipboardContentBinding="{x:Null}" IsReadOnly="True" Width="200" Header="ค่าใช้จ่าย"/>
+                <DataGridTextColumn Binding="{Binding ledgerName}" CanUserResize="False" ClipboardContentBinding="{x:Null}" IsReadOnly="True" Width="200" Header="บัญชี"/>
+                <DataGridTextColumn Binding="{Binding incomeInfo1}" CanUserResize="False" ClipboardContentBinding="{x:Null}" IsReadOnly="True" Width="200" Header="หมายเหตุ"/>
+                <DataGridTextColumn Binding="{Binding incomeGet}" CanUserResize="False" ClipboardContentBinding="{x:Null}" IsReadOnly="True" Width="200" Header="รายรับ"/>
+                <DataGridTextColumn Binding="{Binding incomePay}" CanUserResize="False" ClipboardContentBinding="{x:Null}" IsReadOnly="True" Width="200" Header="รายจ่าย"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="84" Margin="84,31,0,0" VerticalAlignment="Top" Width="151"/>
+        <Rectangle HorizontalAlignment="Left" Height="13" Margin="97,25,0,0" Stroke="White" VerticalAlignment="Top" Width="65" Fill="White"/>
+        <Label x:Name="label" Content="ค้นหาทั้งหมด" HorizontalAlignment="Left" Margin="95,16,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbtGet" Content="ค้นหาเฉพาะรายรับ" HorizontalAlignment="Left" Margin="100,42,0,0" VerticalAlignment="Top" Click="rbtGet_Click"/>
+        <RadioButton x:Name="rbtPay" Content="ค้นหาเฉพาะรายจ่าย" HorizontalAlignment="Left" Margin="100,68,0,0" VerticalAlignment="Top" Click="rbtPay_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="84" Margin="286,31,0,0" VerticalAlignment="Top" Width="998"/>
+        <Rectangle HorizontalAlignment="Left" Height="13" Margin="708,25,0,0" Stroke="White" VerticalAlignment="Top" Width="85" Fill="White"/>
+        <Label x:Name="label_Copy" Content="ค้นหาโดยละเอียด" HorizontalAlignment="Left" Margin="706,16,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label x:Name="label1" Content="จากวันที่ :" HorizontalAlignment="Left" Margin="291,45,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="ถึงวันที่ :" HorizontalAlignment="Left" Margin="298,79,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="datepicker1" HorizontalAlignment="Left" Margin="353,46,0,0" VerticalAlignment="Top" Width="113"/>
+        <DatePicker x:Name="datepicker2" HorizontalAlignment="Left" Margin="353,82,0,0" VerticalAlignment="Top" Width="113"/>
+        <CheckBox x:Name="cbkRub" Content="ค้นหารายรับ" HorizontalAlignment="Left" Margin="504,51,0,0" VerticalAlignment="Top" Width="81" Click="cbkRub_Click"/>
+        <CheckBox x:Name="cbkPay" Content="ค้นหารายจ่าย" HorizontalAlignment="Left" Margin="504,85,0,0" VerticalAlignment="Top" Width="85" Click="cbkPay_Click"/>
+        <Label x:Name="label3" Content="คำค้นหา :" HorizontalAlignment="Left" Margin="627,45,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3_Copy" Content="คำค้นหา :" HorizontalAlignment="Left" Margin="627,80,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSearchrub" HorizontalAlignment="Left" Height="21" Margin="693,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="305" KeyUp="PressEnterSearchRub"/>
+        <TextBox x:Name="txtSearchpay" HorizontalAlignment="Left" Height="21" Margin="693,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="305" KeyUp="PressEnterPay"/>
+        <Label x:Name="label3_Copy1" Content="จำนวนเงินตั้งแต่ :" HorizontalAlignment="Left" Margin="1005,45,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3_Copy2" Content="จำนวนเงินตั้งแต่ :" HorizontalAlignment="Left" Margin="1005,80,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtMoneyrub" HorizontalAlignment="Left" Height="21" Margin="1092,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" KeyUp="PressEnterSearchMoneyRub"/>
+        <TextBox x:Name="txtMoneypay" HorizontalAlignment="Left" Height="21" Margin="1093,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" KeyUp="PressEnterMoneyPay"/>
+        <RadioButton x:Name="rbtShowall" Content="ค้นหาทั้งหมด" HorizontalAlignment="Left" Margin="100,95,0,0" VerticalAlignment="Top" Click="rbtShowAll"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="117" Margin="84,608,0,0" VerticalAlignment="Top" Width="1200"/>
+        <Label x:Name="label4" Content="หมายเหตุ :" HorizontalAlignment="Left" Margin="95,584,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbRub" Content="" HorizontalAlignment="Left" Margin="95,639,0,0" VerticalAlignment="Top" Width="275" Background="{x:Null}"/>
+        <Label x:Name="lbPay" Content="" HorizontalAlignment="Left" Margin="95,675,0,0" VerticalAlignment="Top" Width="275" Background="{x:Null}"/>
+        <Label x:Name="lbShoworderRub" Content="" HorizontalAlignment="Left" Margin="391,639,0,0" VerticalAlignment="Top" Width="322" Background="{x:Null}"/>
+        <Label x:Name="lbShoworderPay" Content="" HorizontalAlignment="Left" Margin="391,675,0,0" VerticalAlignment="Top" Width="322" Background="{x:Null}"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="88" Margin="1053,632,0,0" VerticalAlignment="Top" Width="216"/>
+        <Label x:Name="label5" Content="สรุป" HorizontalAlignment="Left" Margin="1053,608,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="etcRub" Content="" HorizontalAlignment="Left" Margin="1060,636,0,0" VerticalAlignment="Top" Width="169" Background="{x:Null}" Height="27" FontWeight="Bold"/>
+        <Label x:Name="etcPay" Content="" HorizontalAlignment="Left" Margin="1060,665,0,0" VerticalAlignment="Top" Width="169" Background="{x:Null}" Height="25" FontWeight="Bold"/>
+        <Label x:Name="etcInfo" Content="" HorizontalAlignment="Left" Margin="1060,692,0,0" VerticalAlignment="Top" Width="202" Background="{x:Null}" Height="26" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

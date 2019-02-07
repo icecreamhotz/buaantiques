@@ -1,0 +1,79 @@
+﻿<Window x:Class="Project2016App.ProductandPrice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Project2016App"
+        mc:Ignorable="d"
+        Title="จัดการข้อมูลประเภทสินค้า" Height="759" Width="1378" Icon="iconapp.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" xml:lang="th-TH" Loaded="Form_Load" >
+    <Grid Margin="0,2,0,-2">
+        <Grid.Background>
+            <ImageBrush ImageSource="image/bg-editproduct.png" Opacity="0.199"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label2" Content="_______________________________" HorizontalAlignment="Left" Margin="-20,216,0,0" VerticalAlignment="Top" Width="593" FontSize="120" Height="294" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.884"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="label" Content="ชื่อประเภทสินค้า :" HorizontalAlignment="Left" Margin="838,73,0,0" VerticalAlignment="Top" Height="36" Width="147" FontSize="18"/>
+        <Label x:Name="label_Copy" Content="รหัสสินค้า :" HorizontalAlignment="Left" Margin="437,162,0,0" VerticalAlignment="Top" Height="35" Width="95" FontSize="18"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="338,340,0,0" VerticalAlignment="Top" Height="300" Width="900" AutoGenerateColumns="False" SelectionChanged="DataGridCellClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding proCode}" ClipboardContentBinding="{x:Null}" FontSize="15" Header="รหัสสินค้า" SortMemberPath="typepName" Width="150" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding proName}" ClipboardContentBinding="{x:Null}" FontSize="15" Header="ชื่อสินค้า" SortMemberPath="typepID" Width="150" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding proPricebuy}" ClipboardContentBinding="{x:Null}" FontSize="15" Header="ราคารับซื้อ" SortMemberPath="typepID" Width="150" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding proPricesell}" ClipboardContentBinding="{x:Null}" FontSize="15" Header="ราคาขาย" SortMemberPath="typepID" Width="150" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding typepName}" ClipboardContentBinding="{x:Null}" FontSize="15" Header="หน่วยนับ" SortMemberPath="typepID" Width="150" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding typenameUnit}" ClipboardContentBinding="{x:Null}" FontSize="15" Header="ประเภทสินค้า" SortMemberPath="typepID" Width="150" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="66,66,0,0" Stroke="White" VerticalAlignment="Top" Width="100">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/save.ico"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="SavetoDB" Content="Button" HorizontalAlignment="Left" Margin="66,62,0,0" VerticalAlignment="Top" Width="104" Height="106" Background="White" BorderBrush="White" Foreground="White" Opacity="0" Click="SavetoDB_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="75,289,0,0" Stroke="White" VerticalAlignment="Top" Width="100">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/edit.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="EdittoDB" Content="Button" HorizontalAlignment="Left" Margin="74,284,0,0" VerticalAlignment="Top" Width="105" Height="107" Background="White" BorderBrush="White" Foreground="White" Opacity="0" Click="EdittoDB_Click" />
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="64,509,0,0" Stroke="White" VerticalAlignment="Top" Width="100">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/delete.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="DeleteFromDB" Content="Button" HorizontalAlignment="Left" Margin="63,509,0,0" VerticalAlignment="Top" Width="104" Height="107" Background="White" BorderBrush="White" Foreground="White" Opacity="0" Click="DeleteFromDB_Click" />
+        <Label x:Name="label1" Content="บันทึก" HorizontalAlignment="Left" Margin="86,168,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="label1_Copy" Content="แก้ไข" HorizontalAlignment="Left" Margin="86,391,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="label1_Copy1" Content="ลบ" HorizontalAlignment="Left" Margin="99,612,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <Label x:Name="label_Copy1" Content="หน่วยนับสินค้า :" HorizontalAlignment="Left" Margin="406,73,0,0" VerticalAlignment="Top" Height="36" Width="123" FontSize="18"/>
+        <Label x:Name="label_Copy2" Content="ชื่อสินค้า :" HorizontalAlignment="Left" Margin="880,161,0,0" VerticalAlignment="Top" Height="35" Width="95" FontSize="18"/>
+        <Label x:Name="label_Copy3" Content="ราคาซื้อ :" HorizontalAlignment="Left" Margin="446,254,0,0" VerticalAlignment="Top" Height="34" Width="96" FontSize="18"/>
+        <Label x:Name="label_Copy4" Content="ราคาขาย :" HorizontalAlignment="Left" Margin="878,254,0,0" VerticalAlignment="Top" Height="36" Width="94" FontSize="18"/>
+        <TextBox x:Name="txtpSell" HorizontalAlignment="Left" Height="34" Margin="977,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" FontSize="15"/>
+        <TextBox x:Name="txtpBuy" HorizontalAlignment="Left" Height="34" Margin="532,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" FontSize="15"/>
+        <TextBox x:Name="txtpName" HorizontalAlignment="Left" Height="34" Margin="977,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" FontSize="15"/>
+        <TextBox x:Name="txtpCode" HorizontalAlignment="Left" Height="34" Margin="533,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="260" FontSize="15"/>
+        <ComboBox x:Name="cbType" HorizontalAlignment="Left" Margin="534,77,0,0" VerticalAlignment="Top" Width="259" Height="33"/>
+        <ComboBox x:Name="cbUnit" HorizontalAlignment="Left" Margin="979,77,0,0" VerticalAlignment="Top" Width="260" Height="32"/>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="1251,515,0,0" Stroke="White" VerticalAlignment="Top" Width="100">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/cleardata.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="ClearData" Content="Button" HorizontalAlignment="Left" Margin="1250,512,0,0" VerticalAlignment="Top" Width="104" Height="107" Background="White" BorderBrush="White" Foreground="White" Opacity="0" Click="ClearData_Click" />
+        <Label x:Name="label1_Copy2" Content="ล้างข้อมูล" HorizontalAlignment="Left" Margin="1258,611,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+
+    </Grid>
+</Window>

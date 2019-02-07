@@ -1,0 +1,76 @@
+﻿<Window x:Class="Project2016App.AddInfoEmployee"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Project2016App"
+        mc:Ignorable="d"
+        Title="เพิ่มข้อมูลพนักงาน" Height="759" Width="1378" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="iconapp.ico" WindowState="Maximized" xml:lang="th-TH">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="image/bgemployee.jpg" Opacity="0.1"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="612" Margin="32,96,0,0" VerticalAlignment="Top" Width="1306">
+            <Border.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </Border.Background>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="370" Margin="76,308,0,0" VerticalAlignment="Top" Width="1219">
+            <Border.Background>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </Border.Background>
+        </Border>
+        <Button x:Name="ChooseFile" Content="ค้นหารูปภาพ" HorizontalAlignment="Left" Margin="642,268,0,435" VerticalAlignment="Center" Width="74" Click="ChooseFile_Click" Height="27"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="145" Margin="607,112,0,0" VerticalAlignment="Top" Width="151">
+            <Image x:Name="image1" HorizontalAlignment="Left" Height="143" VerticalAlignment="Top" Width="149"/>
+        </Border>
+        <Label x:Name="label1" Content="ข้อมูลส่วนตัวพนักงาน" HorizontalAlignment="Left" Margin="78,281,0,0" VerticalAlignment="Top" Height="26" Width="107"/>
+        <Label x:Name="label2" Content="ชื่อ :" HorizontalAlignment="Left" Margin="139,337,0,0" VerticalAlignment="Top" Height="26" Width="29"/>
+        <Label x:Name="label2_Copy" Content="นามสกุล :" HorizontalAlignment="Left" Margin="355,335,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+        <Label x:Name="label2_Copy1" Content="เบอร์โทร :" HorizontalAlignment="Left" Margin="595,335,0,0" VerticalAlignment="Top" Height="26" Width="55"/>
+        <Label x:Name="label2_Copy2" Content="รหัสบัตรประชาชน :" HorizontalAlignment="Left" Margin="838,334,0,0" VerticalAlignment="Top" Height="26" Width="98"/>
+        <Label x:Name="label2_Copy3" Content="เพศ :" HorizontalAlignment="Left" Margin="135,402,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
+        <CheckBox x:Name="cbkMale" Content="ชาย" HorizontalAlignment="Left" Margin="181,408,0,0" VerticalAlignment="Top" Click="ClickMale"/>
+        <CheckBox x:Name="cbkFemale" Content="หญิง" HorizontalAlignment="Left" Margin="254,408,0,0" VerticalAlignment="Top" Click="ClickFemale"/>
+        <Label x:Name="label2_Copy4" Content="บ้านเลขที่ :" HorizontalAlignment="Left" Margin="351,401,0,0" VerticalAlignment="Top" Height="26" Width="66"/>
+        <ComboBox x:Name="cbProvince" HorizontalAlignment="Left" Margin="174,464,0,0" VerticalAlignment="Top" Width="120" DropDownOpened="AfterOpenProvince" DropDownClosed="AfterClosedProvince"/>
+        <ComboBox x:Name="cbAmphur" HorizontalAlignment="Left" Margin="174,514,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="AfterAmphurClosed" />
+        <TextBox x:Name="txtLastname" HorizontalAlignment="Left" Height="25" Margin="412,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="25" Margin="173,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Height="25" Margin="413,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
+        <Label x:Name="label2_Copy5" Content="จังหวัด :" HorizontalAlignment="Left" Margin="123,462,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
+        <Label x:Name="label2_Copy6" Content="อำเภอ :" HorizontalAlignment="Left" Margin="124,507,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
+        <ComboBox x:Name="cbDistrict" HorizontalAlignment="Left" Margin="174,556,0,0" VerticalAlignment="Top" Width="120" DropDownClosed="AfterdistrcitsClosed"/>
+        <Label x:Name="label2_Copy7" Content="ตำบล :" HorizontalAlignment="Left" Margin="126,554,0,0" VerticalAlignment="Top" Height="26" Width="56"/>
+        <Label x:Name="label2_Copy8" Content="รหัสไปรษณีย์ :" HorizontalAlignment="Left" Margin="94,597,0,0" VerticalAlignment="Top" Height="26" Width="76"/>
+        <TextBox x:Name="txtZipcode" HorizontalAlignment="Left" Height="25" Margin="174,598,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121"/>
+        <Label x:Name="label2_Copy9" Content="ที่อยู่รูปภาพ :" HorizontalAlignment="Left" Margin="1005,640,0,0" VerticalAlignment="Top" Height="26" Width="76"/>
+        <TextBox x:Name="showPicUrl" HorizontalAlignment="Left" Height="26" Margin="1074,641,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+        <Rectangle HorizontalAlignment="Left" Height="69" Margin="34,9,0,0" Stroke="White" VerticalAlignment="Top" Width="76">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/save.ico"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="Savetodb" Content="Button" HorizontalAlignment="Left" Margin="34,8,0,0" VerticalAlignment="Top" Width="74" Height="66" BorderBrush="White" Opacity="0" Click="Savetodb_Click"/>
+        <Label x:Name="label" Content="บันทึก" HorizontalAlignment="Left" Margin="42,69,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="32" Width="57"/>
+        <Rectangle HorizontalAlignment="Left" Height="69" Margin="136,9,0,0" Stroke="White" VerticalAlignment="Top" Width="76">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/cleardata.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="Cleardata" Content="Button" HorizontalAlignment="Left" Margin="136,8,0,0" VerticalAlignment="Top" Width="74" Height="66" BorderBrush="White" Opacity="0" Click="Cleardata_Click"/>
+        <Label x:Name="label_Copy" Content="ล้างข้อมูล" HorizontalAlignment="Left" Margin="138,68,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Height="32" Width="79"/>
+        <Label x:Name="label2_Copy10" Content="ถนน :" HorizontalAlignment="Left" Margin="666,400,0,0" VerticalAlignment="Top" Height="26" Width="41"/>
+        <Label x:Name="label2_Copy11" Content="หมู่ :" HorizontalAlignment="Left" Margin="905,399,0,0" VerticalAlignment="Top" Height="26" Width="40"/>
+        <TextBox x:Name="txtMoo" HorizontalAlignment="Left" Height="25" Margin="947,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="214"/>
+        <TextBox x:Name="txtRoad" HorizontalAlignment="Left" Height="25" Margin="714,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+
+        <xctk:MaskedTextBox x:Name="txtCard"  Mask="0-0000-00000-00-0" CaretIndex="0"  Margin="940,337,314,382" FontSize="12" />
+        <xctk:MaskedTextBox x:Name="txtTel" Mask="000-000-0000" CaretIndex="0"   Margin="658,337,606,382" FontSize="12"/>
+    </Grid>
+</Window>

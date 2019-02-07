@@ -1,0 +1,111 @@
+﻿<Window x:Class="Project2016App.Statistic"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project2016App"
+        mc:Ignorable="d"
+        Title="สถิติการซื้อ-ขาย และ การตัดสินใจการส่งของ" Height="759" Width="1378" ResizeMode="NoResize" Icon="iconapp.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized" xml:lang="th-TH" Loaded="Form_Load">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="image/bg-statistic.jpg" Opacity="0.2"/>
+        </Grid.Background>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="577" Margin="202,69,0,0" VerticalAlignment="Top" Width="916"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="22" Margin="213,60,0,0" Stroke="White" VerticalAlignment="Top" Width="128"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="254" Margin="762,95,0,0" VerticalAlignment="Top" Width="340"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="20" Margin="782,83,0,0" Stroke="White" VerticalAlignment="Top" Width="104"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="218,61,0,0" TextWrapping="Wrap" Text="สถิติการรับซื้อและการขาย" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="255" Margin="217,95,0,0" VerticalAlignment="Top" Width="501"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="22" Margin="231,86,0,0" Stroke="White" VerticalAlignment="Top" Width="68"/>
+        <Label x:Name="label" Content="สถิติการซื้อ" HorizontalAlignment="Left" Margin="234,81,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="สถิติการซื้อแบบตาราง" HorizontalAlignment="Left" Margin="779,81,0,0" VerticalAlignment="Top" Width="109" Height="27"/>
+        <Label x:Name="label1" Content="รายการ อันดับ 1 : " HorizontalAlignment="Left" Margin="240,105,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label x:Name="label1_Copy" Content="รายการ อันดับ 2 : " HorizontalAlignment="Left" Margin="240,131,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label x:Name="label1_Copy1" Content="รายการ อันดับ 3 : " HorizontalAlignment="Left" Margin="240,157,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label x:Name="label1_Copy2" Content="รายการ อันดับ 4 : " HorizontalAlignment="Left" Margin="240,183,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label x:Name="label1_Copy3" Content="รายการ อันดับ 5 : " HorizontalAlignment="Left" Margin="240,210,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBlock x:Name="pShow1" HorizontalAlignment="Left" Margin="330,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="17"/>
+        <TextBlock x:Name="pShow2" HorizontalAlignment="Left" Margin="330,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="17"/>
+        <TextBlock x:Name="pShow3" HorizontalAlignment="Left" Margin="330,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="17"/>
+        <TextBlock x:Name="pShow4" HorizontalAlignment="Left" Margin="330,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="17"/>
+        <TextBlock x:Name="pShow5" HorizontalAlignment="Left" Margin="330,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="16"/>
+        <DatePicker x:Name="datePicker1" HorizontalAlignment="Left" Margin="269,257,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="จาก" HorizontalAlignment="Left" Margin="239,255,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2_Copy" Content="ถึง" HorizontalAlignment="Left" Margin="376,255,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="datePicker2" HorizontalAlignment="Left" Margin="401,257,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdbCustom" Content="กำหนดเอง" HorizontalAlignment="Left" Margin="243,298,0,0" VerticalAlignment="Top" Checked="rdbCustom_Checked"/>
+        <RadioButton x:Name="rdbMonth" Content="ประจำเดือน" HorizontalAlignment="Left" Margin="331,298,0,0" VerticalAlignment="Top" Checked="rdbMonth_Checked"/>
+        <RadioButton x:Name="rdbYear" Content="ประจำปี" HorizontalAlignment="Left" Margin="424,298,0,0" VerticalAlignment="Top" Checked="rdbYear_Checked"/>
+        <Button x:Name="SearchProductBuy" Content="ค้นหา" HorizontalAlignment="Left" Margin="634,321,0,0" VerticalAlignment="Top" Width="75" Click="SearchProductBuy_Click"/>
+        <Label x:Name="label1_Copy4" Content="จำนวน : " HorizontalAlignment="Left" Margin="505,105,0,0" VerticalAlignment="Top" Width="54"/>
+        <Label x:Name="label1_Copy5" Content="จำนวน : " HorizontalAlignment="Left" Margin="505,131,0,0" VerticalAlignment="Top" Width="53"/>
+        <Label x:Name="label1_Copy6" Content="จำนวน : " HorizontalAlignment="Left" Margin="505,157,0,0" VerticalAlignment="Top" Width="52"/>
+        <Label x:Name="label1_Copy7" Content="จำนวน : " HorizontalAlignment="Left" Margin="505,183,0,0" VerticalAlignment="Top" Width="51"/>
+        <Label x:Name="label1_Copy8" Content="จำนวน : " HorizontalAlignment="Left" Margin="505,210,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBlock x:Name="tShow1" HorizontalAlignment="Left" Margin="557,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="17"/>
+        <TextBlock x:Name="tShow2" HorizontalAlignment="Left" Margin="557,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="17"/>
+        <TextBlock x:Name="tShow3" HorizontalAlignment="Left" Margin="557,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="17"/>
+        <TextBlock x:Name="tShow4" HorizontalAlignment="Left" Margin="557,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="17"/>
+        <TextBlock x:Name="tShow5" HorizontalAlignment="Left" Margin="557,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="16"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="256" Margin="217,376,0,0" VerticalAlignment="Top" Width="501"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="22" Margin="231,368,0,0" Stroke="White" VerticalAlignment="Top" Width="68"/>
+        <Label x:Name="label_Copy" Content="สถิติการขาย" HorizontalAlignment="Left" Margin="234,362,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy9" Content="รายการ อันดับ 1 : " HorizontalAlignment="Left" Margin="240,386,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label x:Name="label1_Copy10" Content="รายการ อันดับ 2 : " HorizontalAlignment="Left" Margin="240,412,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label x:Name="label1_Copy11" Content="รายการ อันดับ 3 : " HorizontalAlignment="Left" Margin="240,438,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label x:Name="label1_Copy12" Content="รายการ อันดับ 4 : " HorizontalAlignment="Left" Margin="240,464,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label x:Name="label1_Copy13" Content="รายการ อันดับ 5 : " HorizontalAlignment="Left" Margin="240,492,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBlock x:Name="sShow1" HorizontalAlignment="Left" Margin="330,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="18"/>
+        <TextBlock x:Name="sShow2" HorizontalAlignment="Left" Margin="330,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="18"/>
+        <TextBlock x:Name="sShow3" HorizontalAlignment="Left" Margin="330,444,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="16"/>
+        <TextBlock x:Name="sShow4" HorizontalAlignment="Left" Margin="330,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="16"/>
+        <TextBlock x:Name="sShow5" HorizontalAlignment="Left" Margin="330,496,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="16"/>
+        <DatePicker x:Name="datePicker1Sell" HorizontalAlignment="Left" Margin="269,538,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2_Copy1" Content="จาก" HorizontalAlignment="Left" Margin="239,536,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2_Copy2" Content="ถึง" HorizontalAlignment="Left" Margin="376,536,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="datePicker2Sell" HorizontalAlignment="Left" Margin="401,538,0,0" VerticalAlignment="Top"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="22" Margin="784,365,0,0" Stroke="White" VerticalAlignment="Top" Width="68"/>
+        <RadioButton x:Name="rdbCustom_Sell" Content="กำหนดเอง" HorizontalAlignment="Left" Margin="243,580,0,0" VerticalAlignment="Top" Checked="rdbCustom_Sell_Checked"/>
+        <RadioButton x:Name="rdbMonth_Sell" Content="ประจำเดือน" HorizontalAlignment="Left" Margin="331,580,0,0" VerticalAlignment="Top" Checked="rdbMonth_Sell_Checked"/>
+        <RadioButton x:Name="rdbYear_Sell" Content="ประจำปี" HorizontalAlignment="Left" Margin="424,580,0,0" VerticalAlignment="Top" Checked="rdbYear_Sell_Checked"/>
+        <Button x:Name="SearchProductSell" Content="ค้นหา" HorizontalAlignment="Left" Margin="634,602,0,0" VerticalAlignment="Top" Width="75" Click="SearchProductSell_Click" />
+        <Label x:Name="label1_Copy14" Content="จำนวน : " HorizontalAlignment="Left" Margin="505,386,0,0" VerticalAlignment="Top" Width="54"/>
+        <Label x:Name="label1_Copy15" Content="จำนวน : " HorizontalAlignment="Left" Margin="505,412,0,0" VerticalAlignment="Top" Width="53"/>
+        <Label x:Name="label1_Copy16" Content="จำนวน : " HorizontalAlignment="Left" Margin="505,438,0,0" VerticalAlignment="Top" Width="52"/>
+        <Label x:Name="label1_Copy17" Content="จำนวน : " HorizontalAlignment="Left" Margin="505,464,0,0" VerticalAlignment="Top" Width="51"/>
+        <Label x:Name="label1_Copy18" Content="จำนวน : " HorizontalAlignment="Left" Margin="505,492,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBlock x:Name="tShow_Sell1" HorizontalAlignment="Left" Margin="557,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="18"/>
+        <TextBlock x:Name="tShow_Sell2" HorizontalAlignment="Left" Margin="557,418,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="18"/>
+        <TextBlock x:Name="tShow_Sell3" HorizontalAlignment="Left" Margin="557,444,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="16"/>
+        <TextBlock x:Name="tShow_Sell4" HorizontalAlignment="Left" Margin="557,470,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="16"/>
+        <TextBlock x:Name="tShow_Sell5" HorizontalAlignment="Left" Margin="557,496,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" Height="16"/>
+        <TextBlock x:Name="Typenubbuy1" HorizontalAlignment="Left" Margin="649,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <TextBlock x:Name="Typenubbuy2" HorizontalAlignment="Left" Margin="649,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <TextBlock x:Name="Typenubbuy3" HorizontalAlignment="Left" Margin="650,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <TextBlock x:Name="Typenubbuy4" HorizontalAlignment="Left" Margin="650,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <TextBlock x:Name="Typenubbuy5" HorizontalAlignment="Left" Margin="650,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <TextBlock x:Name="Typenubsell1" HorizontalAlignment="Left" Margin="649,392,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <TextBlock x:Name="Typenubsell2" HorizontalAlignment="Left" Margin="649,417,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <TextBlock x:Name="Typenubsell3" HorizontalAlignment="Left" Margin="650,443,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <TextBlock x:Name="Typenubsell4" HorizontalAlignment="Left" Margin="650,469,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <TextBlock x:Name="Typenubsell5" HorizontalAlignment="Left" Margin="650,494,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
+        <DataGrid x:Name="dataGrid"  HorizontalAlignment="Left" Margin="770,103,0,0" VerticalAlignment="Top" RowHeaderWidth="20" Height="239" Width="322" AutoGenerateColumns="False" LoadingRow="DataGrid_LoadingRow" Background="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding buyName}" ClipboardContentBinding="{x:Null}" Header="ชื่อรายการ" Width="100" />
+                <DataGridTextColumn x:Name="dgTotalall" Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="จำนวน" Width="100"/>
+                <DataGridTextColumn Binding="{Binding typepName}" ClipboardContentBinding="{x:Null}" Header="หน่วยนับ" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="254" Margin="762,376,0,0" VerticalAlignment="Top" Width="340"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="20" Margin="782,366,0,0" Stroke="White" VerticalAlignment="Top" Width="97"/>
+        <Label x:Name="label3_Copy" Content="สถิติขายแบบตาราง" HorizontalAlignment="Left" Margin="781,361,0,0" VerticalAlignment="Top" Width="100" Height="27"/>
+        <DataGrid x:Name="dataGrid2"  HorizontalAlignment="Left" Margin="770,384,0,0" VerticalAlignment="Top" RowHeaderWidth="20" Height="239" Width="322" AutoGenerateColumns="False" LoadingRow="DataGrid_LoadingRow" Background="{x:Null}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding sellName}" ClipboardContentBinding="{x:Null}" Header="ชื่อรายการ" Width="100" />
+                <DataGridTextColumn x:Name="dg2Totalall" Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="จำนวน" Width="100"/>
+                <DataGridTextColumn Binding="{Binding typepName}" ClipboardContentBinding="{x:Null}" Header="หน่วยนับ" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

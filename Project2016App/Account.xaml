@@ -1,0 +1,45 @@
+﻿<Window x:Class="Project2016App.Account"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project2016App"
+        mc:Ignorable="d"
+        Title="บันทึกรายการประจำวัน" Height="560" Width="672" ResizeMode="NoResize"  Icon="iconapp.ico" WindowStartupLocation="CenterScreen" Loaded="Form_Load" Background="White" BorderBrush="White">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="image/bg-account.jpg" Opacity="0.2"/>
+        </Grid.Background>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="486" Margin="46,22,0,0" VerticalAlignment="Top" Width="576"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="20" Margin="75,46,0,0" Stroke="White" VerticalAlignment="Top" Width="103"/>
+        <Label x:Name="label_Copy" Content="บันทึกรายรับ-รายจ่าย" HorizontalAlignment="Left" Margin="73,42,0,0" VerticalAlignment="Top" Width="107"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="459" Margin="61,39,0,0" VerticalAlignment="Top" Width="545"/>
+        <DatePicker x:Name="datePicker1" HorizontalAlignment="Left" Margin="178,93,0,0" VerticalAlignment="Top" Height="26" Width="116"/>
+        <Label x:Name="label1_Copy" Content="วันที่ : " HorizontalAlignment="Left" Margin="136,92,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy1" Content="รหัสบัญชี : " HorizontalAlignment="Left" Margin="113,132,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="txtaccCode" HorizontalAlignment="Left" Height="23" Margin="178,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117"/>
+        <Label x:Name="label1_Copy2" Content="รายละเอียด : " HorizontalAlignment="Left" Margin="106,177,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="label1_Copy3" Content="ประเภทบัญชี :" HorizontalAlignment="Left" Margin="99,223,0,0" VerticalAlignment="Top" Width="74"/>
+        <Label x:Name="label1_Copy4" Content="รายการ : " HorizontalAlignment="Left" Margin="122,267,0,0" VerticalAlignment="Top" Width="51"/>
+        <TextBox x:Name="txtItem1" HorizontalAlignment="Left" Height="23" Margin="178,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="404"/>
+        <Label x:Name="label1_Copy5" Content="จำนวนเงินรับ :" HorizontalAlignment="Left" Margin="99,322,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label1_Copy6" Content="จำนวนเงินจ่าย :" HorizontalAlignment="Left" Margin="93,364,0,0" VerticalAlignment="Top" Width="81"/>
+        <TextBox x:Name="txtRub" HorizontalAlignment="Left" Height="23" Margin="178,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" KeyDown="PressTxtAccCode"/>
+        <TextBox x:Name="txtPay" HorizontalAlignment="Left" Height="23" Margin="178,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Right" KeyDown="PressTxtAccCode"/>
+        <TextBlock x:Name="showtxtaccItem" HorizontalAlignment="Left" Margin="178,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <TextBlock x:Name="showtxtaccStatus" HorizontalAlignment="Left" Margin="178,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="20"/>
+        <Rectangle HorizontalAlignment="Left" Height="51" Margin="325,425,0,0" VerticalAlignment="Top" Width="51">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/save.ico"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="24" Margin="302,136,0,0" VerticalAlignment="Top" Width="22">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/search-128.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="btInsert" Content="" HorizontalAlignment="Left" Margin="329,426,0,0" VerticalAlignment="Top" Width="45" Height="50" Background="{x:Null}" Click="btInsert_Click" Opacity="0"/>
+        <Label x:Name="label" Content="บันทึก" HorizontalAlignment="Left" Margin="330,471,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button x:Name="btSearch" Content="" HorizontalAlignment="Left" Margin="300,136,0,0" VerticalAlignment="Top" Width="25" Height="23" BorderBrush="White" Click="btSearch_Click" Opacity="0"/>
+    </Grid>
+</Window>

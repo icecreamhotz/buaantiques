@@ -1,0 +1,43 @@
+﻿<Window x:Class="Project2016App.Checkwork"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project2016App"
+        mc:Ignorable="d"
+        Title="เช็คการเข้าทำงานของพนักงาน" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="iconapp.ico" d:DesignWidth="794" Height="537.5" Width="800" Loaded="Form_Load">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="image/bg-checkwork.jpg" Opacity="0.1"/>
+        </Grid.Background>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="358,18,0,0" TextWrapping="Wrap" Text="เช็คสถานะการทำงาน" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="38,116,0,0" VerticalAlignment="Top" Height="272" Width="732" CanUserResizeColumns="False" AutoGenerateColumns="False" CanUserSortColumns="False" CanUserReorderColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding idEmp}" ClipboardContentBinding="{x:Null}" Header="รหัส" CanUserSort="False" CanUserResize="False" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding nameEmp}" ClipboardContentBinding="{x:Null}" Header="ชื่อ" Width="100" CanUserSort="False" CanUserResize="False" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding LastnameEmp}" ClipboardContentBinding="{x:Null}" Header="นามสกุล" Width="100" CanUserSort="False" CanUserResize="False" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding cbk1}" ClipboardContentBinding="{x:Null}" Header="มาเต็มวัน" Width="100" CanUserSort="False" CanUserResize="False"/>
+                <DataGridCheckBoxColumn Binding="{Binding cbk2}" ClipboardContentBinding="{x:Null}" Header="มาครี่งวันหน้า" Width="100" CanUserSort="False" CanUserResize="False"/>
+                <DataGridCheckBoxColumn Binding="{Binding cbk3}" ClipboardContentBinding="{x:Null}" Header="มาครึ่งวันหลัง" Width="100" CanUserSort="False" CanUserResize="False"/>
+                <DataGridCheckBoxColumn Binding="{Binding cbk4}" ClipboardContentBinding="{x:Null}" Header="ขาด" Width="100" CanUserSort="False" CanUserResize="False"/>
+                <DataGridTextColumn Binding="{Binding checkInfo}" ClipboardContentBinding="{x:Null}" Header="หมายเหตุ" Width="100" CanUserSort="False"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DatePicker x:Name="dateTimepicker"  HorizontalAlignment="Left"  Margin="139,81,0,0" VerticalAlignment="Top" SelectedDateFormat="Short" DisplayDate="2017-01-24" IsTodayHighlighted="True" />
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="24" Margin="648,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="AfterChange"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="522,80,0,0" VerticalAlignment="Top" Width="120" Height="24" DropDownClosed="AfterChoose">
+            <ComboBoxItem Content="แสดงทั้งหมด" Height="25" Width="100"/>
+            <ComboBoxItem Content="รหัสพนักงาน" Height="25" Width="100"/>
+            <ComboBoxItem Content="ชื่อพนักงาน" Height="25" Width="100"/>
+        </ComboBox>
+        <Label x:Name="label" Content="วันที่ต้องการบันทึก" HorizontalAlignment="Left" Margin="39,80,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="ค้นหา" HorizontalAlignment="Left" Margin="486,78,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="58" Margin="376,407,0,0" VerticalAlignment="Top" Width="56">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="image/save.ico"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="button" Content="" HorizontalAlignment="Left" Margin="376,407,0,0" VerticalAlignment="Top" Width="55" Click="button_Click" Opacity="0" Height="58"/>
+        <Label x:Name="label2" Content="บันทึก" HorizontalAlignment="Left" Margin="383,458,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+    </Grid>
+</Window>

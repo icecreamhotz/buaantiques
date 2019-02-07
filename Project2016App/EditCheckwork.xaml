@@ -1,0 +1,41 @@
+﻿<Window x:Class="Project2016App.EditCheckwork"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project2016App"
+        mc:Ignorable="d"
+        Title="แก้ไขบันทึกการเข้าทำงาน" ResizeMode="NoResize" Icon="iconapp.ico"  WindowStartupLocation="CenterScreen" d:DesignWidth="794" Height="700" Width="950">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="image/bg-checkwork.jpg" Opacity="0.2"/>
+        </Grid.Background>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="390,24,0,0" TextWrapping="Wrap" Text="ตารางแก้การบันทึกเข้าทำงาน" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="54" Margin="146,64,0,0" VerticalAlignment="Top" Width="264"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="22" Margin="156,55,0,0" Stroke="White" VerticalAlignment="Top" Width="68"/>
+        <Label x:Name="label" Content="ค้นหาวันที่" HorizontalAlignment="Left" Margin="161,50,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="datePick1" HorizontalAlignment="Left" Margin="189,85,0,0" VerticalAlignment="Top" Width="94"/>
+        <Label x:Name="label1" Content="วันที่" HorizontalAlignment="Left" Margin="155,83,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Search" Content="ค้นหา" HorizontalAlignment="Left" Margin="310,87,0,0" VerticalAlignment="Top" Width="58" Click="Search_Click" />
+        <Button x:Name="bt_Edit" Content="แก้ไข" HorizontalAlignment="Left" Margin="417,622,0,0" VerticalAlignment="Top" Width="78"  Height="28" Click="bt_Edit_Click"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="20,132,0,0" VerticalAlignment="Top" Height="468" Width="898" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding checkDate,StringFormat=\{0:dd/MM/yyyy\}}" ClipboardContentBinding="{x:Null}" Header="วันที่" Width="100" CanUserResize="False"/>
+                <DataGridTextColumn Binding="{Binding checkID}" ClipboardContentBinding="{x:Null}" Header="รหัสพนักงาน" Width="100" CanUserResize="False"/>
+                <DataGridTextColumn Binding="{Binding checkName}" ClipboardContentBinding="{x:Null}" Header="ชื่อ" Width="100" CanUserResize="False"/>
+                <DataGridTextColumn Binding="{Binding checkLastname}" ClipboardContentBinding="{x:Null}" Header="นามสกุล" Width="100" CanUserResize="False"/>
+                <DataGridTextColumn Binding="{Binding checkStatus}" ClipboardContentBinding="{x:Null}" Header="สถานะ" Width="100" CanUserResize="False"/>
+                <DataGridCheckBoxColumn Binding="{Binding cbk1}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="มาเต็มวัน" Width="100"/>
+                <DataGridCheckBoxColumn Binding="{Binding cbk2}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="มาครึ่งวันหน้า" Width="100"/>
+                <DataGridCheckBoxColumn Binding="{Binding cbk3}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="มาครึ่งวันหลัง" Width="100"/>
+                <DataGridCheckBoxColumn Binding="{Binding cbk4}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="ขาด" Width="100"/>
+                <DataGridTextColumn Binding="{Binding checkInfo}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="หมายเหตุ" Width="100"/>
+                <DataGridTextColumn Binding="{Binding checkworkID}" CanUserResize="False" ClipboardContentBinding="{x:Null}" Header="จำนวนบันทึก" Width="0" MaxWidth="0" MinWidth="0"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="Searchname" HorizontalAlignment="Left" Height="24" Margin="588,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="94" TextChanged="AfterTextChange"/>
+        <Label x:Name="label3" Content="ค้นหาพนักงาน" HorizontalAlignment="Left" Margin="588,59,0,0" VerticalAlignment="Top" Width="100"/>
+
+
+    </Grid>
+</Window>
